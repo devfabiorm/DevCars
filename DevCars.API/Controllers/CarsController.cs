@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using DevCars.API.InputModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -24,13 +25,13 @@ namespace DevCars.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post()
+        public IActionResult Post([FromBody] AddCarInputModel model)
         {
             return Ok();
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put()
+        public IActionResult Put(int id, [FromBody] UpdateCarInputModel model)
         {
             return Ok();
         }
